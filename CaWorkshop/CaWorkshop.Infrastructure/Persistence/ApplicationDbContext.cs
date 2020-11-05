@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Options;
+using System;
 using System.Reflection;
 
 namespace CaWorkshop.Infrastructure.Persistence
@@ -25,6 +26,7 @@ namespace CaWorkshop.Infrastructure.Persistence
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
+                .LogTo(Console.WriteLine)
                 .EnableDetailedErrors();
 
             base.OnConfiguring(optionsBuilder);
