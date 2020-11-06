@@ -1,12 +1,14 @@
 using CaWorkshop.Application;
 using CaWorkshop.Application.Common.Interfaces;
 using CaWorkshop.Infrastructure;
+using CaWorkshop.Infrastructure.Persistence;
 using CaWorkshop.WebUI.Filters;
 using CaWorkshop.WebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using NSwag;
 using NSwag.Generation.Processors.Security;
@@ -60,6 +62,9 @@ namespace CaWorkshop.WebUI
                 configure.OperationProcessors.Add(
                     new AspNetCoreOperationSecurityScopeProcessor("JWT"));
             });
+
+            services.AddHealthChecks()
+                .AddDbContextCheck<ApplicationDbContext>(failureStatus: HealthStatus.Degraded);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -106,6 +111,7 @@ namespace CaWorkshop.WebUI
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapHealthChecks("/health");
             });
 
             app.UseSpa(spa =>
