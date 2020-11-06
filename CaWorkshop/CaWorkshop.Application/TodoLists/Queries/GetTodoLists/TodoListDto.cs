@@ -10,6 +10,8 @@ namespace CaWorkshop.Application.TodoLists.Queries.GetTodoLists
 
         public string Title { get; set; }
 
+        public string Colour { get; set; }
+
         public IList<TodoItemDto> Items { get; set; }
     }
 }
