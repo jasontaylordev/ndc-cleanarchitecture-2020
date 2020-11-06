@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>CaWorkshop.WebUI</RootNamespace>
+    <AssemblyName>CaWorkshop.WebUI</AssemblyName>
+    
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
@@ -33,12 +36,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CaWorkshop.Application\CaWorkshop.Application.csproj" />
-    <ProjectReference Include="..\CaWorkshop.Infrastructure\CaWorkshop.Infrastructure.csproj" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>CaWorkshop.Domain</RootNamespace>
+    <AssemblyName>CaWorkshop.Domain</AssemblyName>
   </PropertyGroup>
 
 </Project>
