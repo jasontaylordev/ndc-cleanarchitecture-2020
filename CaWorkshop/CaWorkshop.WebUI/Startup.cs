@@ -1,6 +1,6 @@
 using CaWorkshop.Application;
-using CaWorkshop.Application.Common.Interfaces;
 using CaWorkshop.Infrastructure;
+using CaWorkshop.WebUI.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +26,8 @@ namespace CaWorkshop.WebUI
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(configure => 
+                configure.Filters.Add(new ApiExceptionFilterAttribute()));
 
             services.AddRazorPages();
             // In production, the Angular files will be served from this directory
