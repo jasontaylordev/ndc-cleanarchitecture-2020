@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using CaWorkshop.Domain.Common;
+using System.Collections.Generic;
 
 namespace CaWorkshop.Domain.Entities
 {
-    public class TodoList
+    public class TodoList : AuditableEntity
     {
         public int Id { get; set; }
 

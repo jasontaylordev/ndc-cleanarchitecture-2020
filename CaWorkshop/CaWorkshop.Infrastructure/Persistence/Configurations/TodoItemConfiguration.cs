@@ -1,4 +1,5 @@
 ﻿using CaWorkshop.Domain.Entities;
+using IdentityServer4.EntityFramework.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -14,6 +15,8 @@ namespace CaWorkshop.Infrastructure.Persistence.Configurations
 
             builder.Property(e => e.Note)
                 .HasMaxLength(4000);
+
+            builder.ConfigureAuditableEntities();
         }
     }
 }

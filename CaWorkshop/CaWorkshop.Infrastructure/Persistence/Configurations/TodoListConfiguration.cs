@@ -11,6 +11,8 @@ namespace CaWorkshop.Infrastructure.Persistence.Configurations
             builder.Property(e => e.Title)
                 .HasMaxLength(280)
                 .IsRequired();
+
+            builder.ConfigureAuditableEntities();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace CaWorkshop.Application.Common.Model
+﻿namespace CaWorkshop.Application.Common.Models
 {
     public class LookupDto
     {

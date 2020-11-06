@@ -2,16 +2,13 @@ using CaWorkshop.Application.TodoLists.Commands.CreateTodoList;
 using CaWorkshop.Application.TodoLists.Commands.DeleteTodoList;
 using CaWorkshop.Application.TodoLists.Commands.UpdateTodoList;
 using CaWorkshop.Application.TodoLists.Queries.GetTodoLists;
-using CaWorkshop.Domain.Entities;
-using CaWorkshop.WebUI.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace CaWorkshop.WebUI.Controllers
 {
+    [Authorize]
     public class TodoListsController : ApiControllerBase
     {
         // GET: api/TodoLists

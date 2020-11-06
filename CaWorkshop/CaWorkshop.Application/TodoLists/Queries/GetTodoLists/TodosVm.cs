@@ -1,4 +1,4 @@
-﻿using CaWorkshop.Application.Common.Model;
+﻿using CaWorkshop.Application.Common.Models;
 using System.Collections.Generic;
 
 namespace CaWorkshop.Application.TodoLists.Queries.GetTodoLists
