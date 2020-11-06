@@ -84,9 +84,16 @@ namespace CaWorkshop.WebUI
                 app.UseSpaStaticFiles();
             }
 
-            app.UseOpenApi();
-            app.UseSwaggerUi3();
-            // app.UseReDoc(configure => configure.Path = "/redoc");
+            app.UseSwaggerUi3(configure =>
+            {
+                configure.DocumentPath = "/api/v1/specification.json";
+            });
+
+            app.UseReDoc(configure =>
+            {
+                configure.Path = "/redoc";
+                configure.DocumentPath = "/api/v1/specification.json";
+            });
 
             app.UseRouting();
 
