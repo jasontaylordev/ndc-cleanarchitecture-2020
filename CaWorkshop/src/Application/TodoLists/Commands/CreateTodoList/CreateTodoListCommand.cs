@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace CaWorkshop.Application.TodoLists.Commands.CreateTodoList
 {
-    [Authorise]
     public class CreateTodoListCommand : IRequest<int>
     {
         public string Title { get; set; }
